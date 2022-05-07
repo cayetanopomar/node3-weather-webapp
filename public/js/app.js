@@ -36,7 +36,8 @@ weatherForm.addEventListener('submit', (e) => {
     messageTwo.textContent = ''
 
     //API call desde el browser (cliente) a weather-app via query
-    const appURL = `http://localhost:3000/weather?address=${location}`
+    // const appURL = `http://localhost:3000/weather?address=${location}` // for develpment
+    const appURL = `/weather?address=${location}`
     fetch(appURL).then((response) => {
         response.json().then((data) => {
             if (data.error) {
@@ -52,7 +53,6 @@ weatherForm.addEventListener('submit', (e) => {
                 messageOne.textContent = `At ${data.location}`
                 messageTwo.textContent = `${data.description} . It is currently ${data.temperature} degrees out, It feels like ${data.feelslike} degrees out.`
 
-
             }
 
         })
@@ -60,28 +60,3 @@ weatherForm.addEventListener('submit', (e) => {
     })
 
 })
-
-// git 
-// 1) run a command to initialize Git in a "new" project folder
-
-// cayetano@pop-os:~/completeNodejsCurse/web-server$ git init
-// Initialized empty Git repository in /home/cayetano/completeNodejsCurse/web-server/.git/
-// cayetano@pop-os:~/completeNodejsCurse/web-server$ 
-
-
-// 2) adding files into your project:
-//   | untracked files | Unstaged Changes | Staged Chnges | Commits
-
-// By default Git does nos track files hat you add to your application
-
-// "add" comand:   untracked --- add ----> staged Changes
-// "Stage Changes" contains the things that are going to be included in
-// the next "Commit" using for that the "commit" comand that is:
-// "Staged changes" ---commit ----->  "Commits" (each commit has a 
-// unique identifier:  175ab39ht49)
-
-// When we make a "change" to un file that git is already tracking,
-// that is, a file that has been included ia a prvious commit, that
-// comes under the category of "Unstaged Changes" 
-
-// "git status" command
