@@ -26,14 +26,14 @@ app.use(express.static(publicDirectoryPath));  // express.static() function retu
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Created by Andrew Mead'
+        name: 'Created by CP-WebDesign'
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {          // render dynamic tamplate
         title: 'About',
-        name: 'Created by Andrew Mead'
+        name: 'Created by CP-WebDesign'
     });
 });
 
@@ -41,7 +41,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpfull text',
         title: 'Help',
-        name: 'Created by Andrew Mead'
+        name: 'Created by CP-WebDesign'
     });
 });
 
